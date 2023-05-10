@@ -1,6 +1,27 @@
-const farmAnimals = 'cow horse sheep pig chicken';
+const animalVoice = ['cow', 'horse', 'sheep', 'pig', 'chicken'];
 
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const [moo, neigh, baa, oink, cluck] = animalVoice;  
+//destructuring assigns variables to order of element
+
+const [bessie, , dolly, babe, little] = animalVoice;
+// the array after const can not be strings
+// we can skip elements with , ,
+
+const [blackAndWhite, , black, pink] = animalVoice
+// no element was given to chicken, so it was ommitted
+
+console.log(bessie, blackAndWhite);
+
+const colors = 
+['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+const [red, orange, yellow, green, blue, indigo, violet] = colors;
+
+const [r, o, y, g, b, , v] = colors;
+
+const [ , , , , , indg] = colors;
+
+console.log(red, indigo);
 
 const muppet = {
   muppetName: 'Miss Piggy',
@@ -9,6 +30,8 @@ const muppet = {
   job: 'Cast member of The Muppet Show',
   partner: 'Kermit'
 };
+
+const {muppetName, color, song, job, partner} = muppet;
 
 const nestedMuppet = {
   nestedName: 'Kermit',
@@ -24,6 +47,28 @@ const nestedMuppet = {
   nestedJob: 'Host of The Muppet Show',
   nestedPartner: 'Miss Piggy'
 };
+
+const {song2, song4} = nestedMuppet.album.theMuppetMovie;
+//nested variables will return undefined outside of scope
+
+const {nestedJob, nestedPartner} = nestedMuppet;
+
+// const {partner} = nestedMuppet.nestedName;
+// partner;
+
+// console.log(partner);
+// //returns undefined
+
+// const {nestedPartner} = muppet.muppetName;
+// nestedPartner;
+
+// console.log(nestedPartner);
+
+// const {song} = nestedMuppet.album.theMuppetMovie.song3;
+// song;
+
+// const {song2, song4} = muppet.song;
+
 
 // Strings
 
